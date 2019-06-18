@@ -1,0 +1,42 @@
+insert into questoes (questao,resposta,img)
+values('Uma Sociedade Empresária tem como atividade principal a produção e a comercialização de milho. Sabe-se que, ao encerrar o último exercício social, faziam parte dos Ativos dessa sociedade e estavam registrados em seu Balanço Patrimonial: uma lavoura de milho no ponto de colheita e armazenadas em silos da Sociedade Empresária; produtos, resultantes do processamento do milho colhido, armazenados no galpão da Sociedade Empresária. Considerando-se apenas as informações apresentadas e a NBC TG 29 (R2) – Ativo biológico e produto agrícola, assinale a alternativa correta sobre esses Ativos da Sociedade Empresária. 
+A) A lavoura de milho é uma Planta Portadora. 
+B) A lavoura de milho é um Imobilizado em Andamento. 
+C) Os produtos resultantes do processamento do milho colhido são classificados como Estoques. 
+D) O milho em grãos e os produtos resultantes do processamento do milho colhido são classificados como Ativos Biológicos.','','');
+
+insert into questoes (questao,resposta,img)
+values('A respeito de consultas e gerência de transações em banco de dados geográficos (BDG), considere as seguintes afirmativas:
+1 - A expressão “método de indexação espacial" designa uma família de estruturas de indexação espacial, por exemplo o método grid file.
+2 - Um banco de dados geográfico comumente possui estruturas de dados auxiliares, chamadas de índices espaciais, estruturas de indexação espacial ou simplesmente índices, que facilitam a localização dos dados cujo componente espacial satisfaz à qualificação de uma consulta.
+3 - Filtragem, refinamento e pós-processamento são partes de um plano responsável pelo processamento do componente espacial de uma consulta em BDG.
+4 - A consulta e análise espacial não são componentes da estrutura geral de um Sistema de Informações Geográficas.
+Assinale a alternativa correta.
+a) Somente a afirmativa 2 é verdadeira.
+b) Somente as afirmativas 1 e 4 são verdadeiras.
+c) Somente as afirmativas 3 e 4 são verdadeiras.
+d) Somente as afirmativas 1, 2 e 3 são verdadeiras.
+e) As afirmativas 1, 2, 3 e 4 são verdadeiras.','d)','');
+
+insert into questoes (questao,resposta,img)
+values('Considere o ponto A, de latitude -24,5º e longitude -54,5º, e o ponto B, de latitude -24,95º e longitude -54,9945º. Sobre esses pontos, é correto afirmar:
+a) A está ao sul de B.
+b) B está a sudoeste de A.
+c) A está a oeste de B.
+d) B está a nordeste de A.
+e) B não apresenta coordenadas válidas para latitude.','c)','');
+
+insert into questoes (questao,resposta,img)
+values('','','');
+
+insert into questoes (questao,resposta,img)
+values('','','');
+
+insert into questoes (questao,resposta,img)
+values('','','');
+
+insert into questoes (questao,resposta,img)
+values('','','');
+
+insert into questoes (questao,resposta,img)
+values('','','');

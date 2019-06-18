@@ -1,0 +1,95 @@
+html, body{
+	height: 160%;
+	background-color: rgba(217, 217, 217, 0.67);
+}
+#nav{
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    background-color: rgba(114, 144, 164, 0.32);
+    height: 100px;
+}
+#logo{
+    width: 60px;
+    position: relative;
+}
+#tLogo{
+    width: 100px;
+    position: relative;
+}
+#login{
+	position:absolute;
+    right: 60px;
+	top: 25px;
+	width: 50px;
+}
+
+.cad_assunto{
+    height: 650px;
+}
+.formassunto{
+    position: relative;
+    left: 50px;
+    top: 200px;
+    width: 500px;
+    background:  rgba(105, 78, 126, 0.44);
+    padding:40px;
+    box-shadow:0 5px 10px rgb(49, 47, 47);
+    border:1px solid rgba(39, 34, 34, 0.719);
+    box-sizing:border-box;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 200px;
+}
+.formassunto .title{
+    margin-bottom: 25px;
+    font-size: 25px;
+	font-family: 'Pacifico', cursive;
+}
+.formassunto label{
+    font-family: 'Arvo', serif;
+}
+.btn{
+    position: relative;
+    left: 360px;
+}
+.frame_assunto{
+    position: relative;
+    top: -360px;
+    left: 650px;
+}
+
+
+.cad_questao{
+    height: 550px;
+}
+.formquestao{
+    position: relative;
+    left: 50px;
+    top: 100px;
+    width: 500px;
+    background:  rgba(105, 78, 126, 0.44);
+    padding:40px;
+    box-shadow:0 5px 10px rgb(49, 47, 47);
+    border:1px solid rgba(39, 34, 34, 0.719);
+    box-sizing:border-box;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 200px;
+}
+.formquestao .title{
+    margin-bottom: 25px;
+    font-size: 25px;
+	font-family: 'Pacifico', cursive;
+}
+.formquestao label{
+    font-family: 'Arvo', serif;
+}
+.btn{
+    position: relative;
+    left: 360px;
+}
+.frame_questao{
+	margin-top: -600px;
+	margin-left: 645px;
+}

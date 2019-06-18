@@ -1,0 +1,94 @@
+html, body{
+	height: 135%;
+	background-color: rgba(217, 217, 217, 0.67);
+}
+#nav{
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    background-color: rgba(114, 144, 164, 0.32);
+    height: 100px;
+}
+#logo{
+    width: 60px;
+    position: relative;
+}
+#tLogo{
+    width: 100px;
+    position: relative;
+}
+#login{
+	position:absolute;
+    right: 60px;
+	top: 25px;
+	width: 50px;
+}
+.cad_prof{
+    height: 650px;
+}
+.formprof{
+    position: relative;
+    left: 50px;
+    top: 150px;
+    width: 500px;
+    background:  rgba(105, 78, 126, 0.44);
+    padding:40px;
+    box-shadow:0 5px 10px rgb(49, 47, 47);
+    border:1px solid rgba(39, 34, 34, 0.719);
+    box-sizing:border-box;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 200px;
+}
+.formprof .title{
+    margin-bottom: 25px;
+    font-size: 25px;
+	font-family: 'Pacifico', cursive;
+}
+.formprof label{
+    font-family: 'Arvo', serif;
+}
+.btn{
+    position: relative;
+    left: 360px;
+}
+.frame_prof{
+    position: relative;
+    top: -448px;
+    left: 650px;
+}
+
+
+.cad_disc{
+    height: 550px;
+}
+.formdisc{
+    position: relative;
+    left: 50px;
+    top: 100px;
+    width: 500px;
+    background:  rgba(105, 78, 126, 0.44);
+    padding:40px;
+    box-shadow:0 5px 10px rgb(49, 47, 47);
+    border:1px solid rgba(39, 34, 34, 0.719);
+    box-sizing:border-box;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 200px;
+}
+.formdisc .title{
+    margin-bottom: 25px;
+    font-size: 25px;
+	font-family: 'Pacifico', cursive;
+}
+.formdisc label{
+    font-family: 'Arvo', serif;
+}
+.btn{
+    position: relative;
+    left: 360px;
+}
+.frame_disc{
+	margin-top: -410px;
+	margin-left: 645px;
+}
