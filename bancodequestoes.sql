@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.2
+-- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: 18-Jun-2019 às 20:13
--- Versão do servidor: 10.1.34-MariaDB
--- PHP Version: 7.2.7
+-- Host: 127.0.0.1:3306
+-- Generation Time: 22-Jun-2019 às 15:40
+-- Versão do servidor: 5.7.26
+-- versão do PHP: 7.2.18
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -28,12 +28,14 @@ SET time_zone = "+00:00";
 -- Estrutura da tabela `admin`
 --
 
-CREATE TABLE `admin` (
-  `id` int(11) NOT NULL,
+DROP TABLE IF EXISTS `admin`;
+CREATE TABLE IF NOT EXISTS `admin` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `nome` varchar(60) DEFAULT NULL,
   `login` varchar(20) NOT NULL,
-  `senha` varchar(32) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+  `senha` varchar(32) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `admin`
@@ -48,11 +50,13 @@ INSERT INTO `admin` (`id`, `nome`, `login`, `senha`) VALUES
 -- Estrutura da tabela `assunto`
 --
 
-CREATE TABLE `assunto` (
-  `id` int(11) NOT NULL,
+DROP TABLE IF EXISTS `assunto`;
+CREATE TABLE IF NOT EXISTS `assunto` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `nome` varchar(20) DEFAULT NULL,
-  `disciplina` varchar(30) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+  `disciplina` varchar(30) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=17 DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `assunto`
@@ -82,10 +86,12 @@ INSERT INTO `assunto` (`id`, `nome`, `disciplina`) VALUES
 -- Estrutura da tabela `disciplina`
 --
 
-CREATE TABLE `disciplina` (
-  `id` int(11) NOT NULL,
-  `nome` varchar(30) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+DROP TABLE IF EXISTS `disciplina`;
+CREATE TABLE IF NOT EXISTS `disciplina` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nome` varchar(30) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `disciplina`
@@ -103,12 +109,14 @@ INSERT INTO `disciplina` (`id`, `nome`) VALUES
 -- Estrutura da tabela `professor`
 --
 
-CREATE TABLE `professor` (
-  `id` int(11) NOT NULL,
+DROP TABLE IF EXISTS `professor`;
+CREATE TABLE IF NOT EXISTS `professor` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `nome` varchar(60) DEFAULT NULL,
   `login` varchar(20) DEFAULT NULL,
-  `senha` varchar(32) DEFAULT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+  `senha` varchar(32) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `professor`
@@ -117,7 +125,8 @@ CREATE TABLE `professor` (
 INSERT INTO `professor` (`id`, `nome`, `login`, `senha`) VALUES
 (3, 'Fred Henrique', 'henrique', 'c0f70e034774ebd1d92ae507c564e81e'),
 (2, 'Matheus Vasco', 'matheuzin', 'e56b6eea9b0bc782bbb9ea6098ead641'),
-(4, 'Pethe Souza', 'pethin', '5592f5f6cf8b98a3fb91540a1708e619');
+(4, 'Pethe Souza', 'pethin', '5592f5f6cf8b98a3fb91540a1708e619'),
+(5, 'Maria Irilene', 'irilene', '5621455638ff13eaf716eb1b4b54f428');
 
 -- --------------------------------------------------------
 
@@ -125,9 +134,11 @@ INSERT INTO `professor` (`id`, `nome`, `login`, `senha`) VALUES
 -- Estrutura da tabela `prova`
 --
 
-CREATE TABLE `prova` (
-  `id` int(11) NOT NULL,
-  `questoes` varchar(20) NOT NULL
+DROP TABLE IF EXISTS `prova`;
+CREATE TABLE IF NOT EXISTS `prova` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `questoes` varchar(20) NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -136,12 +147,14 @@ CREATE TABLE `prova` (
 -- Estrutura da tabela `questoes`
 --
 
-CREATE TABLE `questoes` (
-  `idquestao` int(11) NOT NULL,
+DROP TABLE IF EXISTS `questoes`;
+CREATE TABLE IF NOT EXISTS `questoes` (
+  `idquestao` int(11) NOT NULL AUTO_INCREMENT,
   `questao` varchar(1000) NOT NULL,
   `resposta` varchar(20) NOT NULL,
-  `img` varchar(500) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `img` varchar(500) DEFAULT NULL,
+  PRIMARY KEY (`idquestao`)
+) ENGINE=InnoDB AUTO_INCREMENT=47 DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `questoes`
@@ -175,87 +188,24 @@ INSERT INTO `questoes` (`idquestao`, `questao`, `resposta`, `img`) VALUES
 (25, 'A palavra se, no período abaixo, é, respectivamente, A prancha desliga-se automaticamente se alguém toca no \r\nequipamento ou se ele entra em contato com outro metal.\r\na)objeto direto, conjunção subordinativa, conjunção subordinativa\r\nb)partícula apassivadora, conjunção subordinativa, partícula de reciprocidade.\r\nc)partícula expletiva, partícula de indeterminação do sujeito, partícula apassivadora\r\nd)partícula integrante do verbo, partícula de indeterminação do sujeito, conjunção subordinativa\r\ne)objeto direto, conjunção subordinativa, partícula de indeterminação do sujeito', 'a)', ''),
 (26, 'Já tive muitas capas e infinitos guarda-chuvas, mas acabei me cansando de tê-los e perdê-los; há anos vivo sem nenhum desses abrigos, e também como toda gente, sem chapéu (Rubem Braga).\r\ntê-los e perdê-los, disse o autor. Os pronomes nesse trecho são, respectivamente,\r\na)objeto direto; adjunto adverbial\r\nb)objeto direto; objeto indireto\r\nc)objeto indireto; objeto indireto\r\nd)adjunto adnominal; objeto direto\r\ne)objeto direto; objeto direto', 'e)', ''),
 (27, '(Msconcursos - 2012 - Prefeitura de Pelotas - RS) Assinale a alternativa em que a concordância nominal esteja de acordo com a variedade padrão:\r\na)Fui eu quem comeu todo o chocolate.\r\nb)Hoje, tu e ele mentiu para o gerente.\r\nc)A multidão estavam ansiosa para o início do show.\r\nd)Às vezes, a gente ficamos sem ação.', 'a)', ''),
-(28, 'Considere os períodos:\r\nI. A Constituição é  a lei suprema, todos devemos obedecê-la.\r\nII. Preferimos ficar em casa do que sair.\r\nDe acordo com a norma culta:\r\na)somente I está correta\r\nb)somente II está correta\r\nc)I e II estão corretas\r\nd)nenhuma está correta', 'd)', '');
-
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `admin`
---
-ALTER TABLE `admin`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `assunto`
---
-ALTER TABLE `assunto`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `disciplina`
---
-ALTER TABLE `disciplina`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `professor`
---
-ALTER TABLE `professor`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `prova`
---
-ALTER TABLE `prova`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `questoes`
---
-ALTER TABLE `questoes`
-  ADD PRIMARY KEY (`idquestao`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `admin`
---
-ALTER TABLE `admin`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- AUTO_INCREMENT for table `assunto`
---
-ALTER TABLE `assunto`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
-
---
--- AUTO_INCREMENT for table `disciplina`
---
-ALTER TABLE `disciplina`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
---
--- AUTO_INCREMENT for table `professor`
---
-ALTER TABLE `professor`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
---
--- AUTO_INCREMENT for table `prova`
---
-ALTER TABLE `prova`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `questoes`
---
-ALTER TABLE `questoes`
-  MODIFY `idquestao` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+(28, 'Considere os períodos:\r\nI. A Constituição é  a lei suprema, todos devemos obedecê-la.\r\nII. Preferimos ficar em casa do que sair.\r\nDe acordo com a norma culta:\r\na)somente I está correta\r\nb)somente II está correta\r\nc)I e II estão corretas\r\nd)nenhuma está correta', 'd)', ''),
+(29, 'Quanto vale 1+1?\r\na) 1\r\nb) 2\r\nc) 3\r\nd) 0', 'b) 2', NULL),
+(31, 'Sobre a constituicao das primeiras estruturas urbanas e correto afirmar:\r\n\r\na) Durante o surgimento das primeiras formacoes urbanas os homens viviam em cavernas.\r\n\r\nb) Nas primeiras formacoes urbanas apareceram instrumentos rudimentares produzidos pelo homem.\r\n\r\nc) O inicio das primeiras cidades ja indicava um processo de sedentarizacao do homem, proporcionado pela Revolucao Agricola.\r\n\r\nd) Quando surgiram as primeiras formacoes urbanas o homem era essencialmente cacador e coletor.\r\n\r\ne) Na formacao das primeiras cidades o homem foi ganhando capacidade de agarrar-se em arvores, tornando-se bipedes.', 'c)', NULL),
+(32, 'A transicao do Paleolitico Superior para o Neolitico (entre 10 000 a.C. e 7000 a.C.) foi acompanhada por algumas mudancas basicas para a humanidade. Entre essas, poderiamos citar:\r\n\r\na) o aparecimento da linguagem falada;\r\n\r\nb) a domesticacao dos animais e plantas, isto e o aparecimento da agricultura e do pastoreio;\r\n\r\nc) o aparecimento da magia e da arte;\r\n\r\nd) o povoamento de amplas areas antes nao povoadas, como a Europa Central e Ocidental;\r\n\r\ne) o aparecimento de varios novos instrumentos, como a agulha de osso, os arpoes, os anzois, a machadinha, a lanca e a faca.', 'b)', NULL),
+(33, '\"Ja se afirmou ser a Pre-Historia uma continuidade da Historia Natural, havendo uma analogia entre a evolucao organica e o progresso da cultura\"\r\n\r\nSobre a Pre-historia, qual das alternativas a seguir e incorreta?\r\n\r\na) Varias ciencias auxiliam no estudo, como a antropologia, a arqueologia e a quimica.\r\n\r\nb) A Pre-historia pode ser dividida em Paleolitico e Neolitico, no que se refere ao processo tecnico de trabalhar a pedra.\r\n\r\nc) Sobre o Paleolitico, podemos afirmar que foi o periodo de grande desenvolvimento artistico, cujo exemplo sao as pinturas antropomorfas e zoomorfas realizadas nas cavernas.\r\n\r\nd) O Neolitico apresentou um desenvolvimento artistico diferente do Paleolitico, atraves dos tracos geometricos do desenho e da pintura.\r\n\r\ne) Os primeiros seres semelhantes ao homem foram o Australopithecus e o Homem de Java que eram bem mais adaptados que o Homem de Neanderthal.', 'e)', NULL),
+(34, 'Indique as alternativas corretas:\r\nI) A palavra moralidade vem do latim \"mos\" ou \"moris\" e significa \"costumes\".\r\nII) As palavras \"etica\" e \"moralidade\" sao sinonimas e correspondem a mesma ideia.\r\nIII) As normas morais nao variam a depender da cultura e do periodo historico.\r\nIV) A palavra \"etica\" vem do grego ethikos e significa modos de ser.\r\n\r\nAs corretas sao: \r\na)  I e IV\r\nb) I e II\r\nc) III e IV\r\nd) II e IV', 'a)', NULL),
+(35, '\"As normas morais variam a depender da cultura e do periodo historico. Tambem podem ser questionadas e destituidas\". Isso significa que:\r\n\r\na) Nos nao podemos pensar sobre as normas morais que sao impostas;\r\n\r\nb) Nos temos que concordar com as normas morais porque sao as normas da nossa cultura;\r\n\r\nc) A moral e um conjunto de valores pelos quais as pessoas guiam seus comportamentos e, por isso, esta sujeita a mudancas a depender do pais e do momento historico em que as pessoas estao inseridas.\r\n\r\nd) Nao agimos de forma \"moral\" se obedecermos as regras que a sociedade estabelece.', 'c)', NULL),
+(36, 'Como podemos diferenciar \"moral\" e \"Ã©tica\"?\r\n\r\na) Nao podemos diferenciar, sao palavras sinonimas.\r\n\r\nb) Moral e um conjunto de valores, e Etica e a reflexao sobre esses valores.\r\n\r\nc) Moral e a pratica da Etica no nosso dia a dia.\r\n\r\nd) Moral e sinonimo de \"Ã©tica aplicada\".', 'b)', NULL),
+(37, 'Leia o fragmento abaixo:\r\n\r\n\"Os homens nao sao maus, mas submissos aos seus interesses... Portanto, nao e da maldade dos homens que e preciso se queixar, mas da ignorancia dos legisladores que sempre colocam o interesse particular em oposicao ao geral. Ate hoje, as mais belas maximas morais nao conseguem traduzir nenhuma mudanca nos costumes das nacoes. Qual e a causa? E que os vicios de um povo estao, se ouso falar, escondidos no fundo de sua legislacao.\" Helvetius\r\n\r\nQuais sao as ideias principais contidas no fragmento acima?\r\n\r\na) Nao ha nenhuma relacao entre as leis e os costumes, pois saos os homens que fazem as leis que os beneficiam.\r\n\r\nb) Para limitar os interesses humanos particulares, e preciso haver leis que prefiram os interesses gerais.\r\n\r\nc) Os homens buscam seus interesses e isso nao significa que eles sejam maus;\r\n\r\nd) Ha uma relacao entre as leis e os costumes, pois as leis permitem ou impedem que os homens cometam erros.', 'b)', NULL),
+(38, 'E a camada da atmosfera mais proxima da superficie terrestre, com uma altitude que varia entre 12 e 18 km. Nela se concentra cerca de 80% dos gases atmosfericos.\r\n\r\nEstamos falando da:\r\na) Troposfera\r\nb) Ionosfera\r\nc) Mesosfera\r\nd) Estratosfera\r\ne) Biosfera', 'a)', NULL),
+(39, 'Dentre os elementos abaixo enumerados, assinale aquele que nao e um fenomeno atmosferico:\r\n\r\na) Variacao de temperatura\r\n\r\nb) Indice de umidade\r\n\r\nc) Formacao de nuvens\r\n\r\nd) Derretimento de geleiras\r\n\r\ne) Formacao de neblinas', 'd)', NULL),
+(40, 'Em relacao aos graficos dos movimentos progressivos e retrogrados, assinale o que for correto:\r\n\r\na) no movimento progressivo, a reta da velocidade e uma reta descendente.\r\n\r\nb) no movimento regressivo, a reta da velocidade e uma reta ascendente.\r\n\r\nc) no movimento regressivo, o grafico de posicao em funcao do tempo e uma reta ascendente.\r\n\r\nd) no movimento progressivo, o grafico de posicao em funcao do tempo e uma reta descendente.\r\n\r\ne) no movimento progressivo, a reta da velocidade e paralela ao eixo x e encontra-se acima do eixo das abscissas.', 'e)', NULL),
+(41, 'Um movel desloca-se de acordo com a seguinte funcao horaria da posicao:\r\nS = 10 + 2.t\r\nAssinale a alternativa que esta correta em relacao ao movimento desse corpo:\r\n\r\na) o movimento e acelerado, sua aceleracao vale 10 m/s2, e a posicao inicial do movimento e de 2 m/s.\r\n\r\nb) o movimento e retrogrado, a posicao inicial do movimento e 2 m, e a velocidade do corpo e de 10 m/s.\r\n\r\nc) o movimento e progressivo, a posicao inicial do movimento e 10 m, e a velocidade do movel e de 2 m/s.\r\n\r\nd) o movimento e retardado, a posicao inicial e de 10 m, e a velocidade e de 2 m/s.\r\n\r\ne) o movimento e uniformemente variado, a posicao inicial e de 10 m, e a aceleracao e de 2 m/s.', 'c)', NULL),
+(42, 'A Biologia Celular, ou citologia, e a parte da Biologia responsavel por estudar o funcionamento das celulas e suas estruturas. Analise as alternativas a seguir e marque aquela que indica corretamente o nome do pesquisador que denominou essas estruturas funcionais dos seres vivos de celulas.\r\n\r\na) Theodor Schwann.\r\n\r\nb) Mathias Schleiden.\r\n\r\nc) Rudolf Virchow.\r\n\r\nd) Robert Hooke.\r\n\r\ne) Walther Flemming.', 'd)', NULL),
+(43, 'A Teoria Celular pode ser resumida, atualmente, em tres pontos principais. Analise e marque a alternativa que nao apresenta uma afirmacao relacionada com essa teoria.\r\n\r\na) Todos os seres vivos sao formadas por uma ou mais celulas.\r\n\r\nb) Todas as celulas sao formadas por membrana, citoplasma e nucleo.\r\n\r\nc) As celulas sao as unidades funcionais dos organismos vivos.\r\n\r\nd) Uma celula so pode originar-se de outra existente.', 'b)', NULL),
+(44, 'Costuma-se dizer que as celulas sao formadas por membrana, citoplasma e nucleo. Entretanto, nao sao todas as celulas que apresentam um nucleo definido e delimitado por membrana nuclear. Baseando-se nisso, o mais correto seria afirmar que todas as celulas possuem membrana, citoplasma e material genetico.\r\nAs celulas que apresentam nucleo definido sao chamadas de\r\n\r\na) autotroficas.\r\n\r\nb) heterotroficas.\r\n\r\nc) eucarioticas.\r\n\r\nd) procarioticas.\r\n\r\ne) termofilas.', 'c)', NULL),
+(45, 'A membrana plasmatica e encontrada em todas as celulas e apresenta como funcao principal controlar a entrada e a saida de substancias no interior dessa estrutura. Essa membrana e formada por uma bicamada fosfolipidica onde estao inseridas algumas proteinas. O modelo que descreve a estrutura da membrana plasmatica recebe o nome de:\r\na) modelo de permeabilidade seletiva.\r\n\r\nb) modelo de organizacao membranar.\r\n\r\nc) modelo fosfolipidico.\r\n\r\nd) modelo do mosaico fluido.\r\n\r\ne) modelo celular.', 'd)', NULL),
+(46, 'A estrategia de obtencao de plantas transgenicas pela insercao de transgenes em cloroplastos, em substituicao a metodologia classica de insercao do transgene no nucleo da celula hospedeira, resultou no aumento quantitativo da producao de proteinas recombinantes com diversas finalidades biotecnologicas. O mesmo tipo de estrategia poderia ser utilizada para produzir proteinas recombinantes em celulas de organismos eucarioticos nao fotossintetizantes, como as leveduras, que sao usadas para producao comercial de varias proteinas recombinantes e que podem ser cultivadas em grandes fermentadores.\r\n\r\nConsiderando a estrategia metodologica descrita, qual organela celular poderia ser utilizada para insercao de transgenes em leveduras?\r\na) Lisossomo.\r\nb) Mitocondria.\r\nc) Peroxissomo.\r\nd) Complexo golgiense.\r\ne) Reticulo endoplasmatico.', 'b)', NULL);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

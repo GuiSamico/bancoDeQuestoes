@@ -94,77 +94,7 @@
             <span id="bemvindo4">Faça login, e elabore sua prova!</span>
         </div>
 
-        <div class="cards">
-            <span id="p">Provas</span>
-            <a href="provaMat.php">
-            <div class="card mb-3" style="max-width: 310px; max-height:103px" id="c1">
-                <div class="row no-gutters">
-                    <div class="col-md-4">
-                        <img src="img/cardMat.jpg" class="card-img" alt="...">
-                    </div>
-                    <div class="col-md-8">
-                        <div class="card-body">
-                            <h5 class="card-title">Matemática</h5>
-                            <p class="card-text">Provas de matemática.</p>
-                            <p class="card-text"><small class="text-muted"></small></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            </a>
-
-            <a href="provaLing.php">
-            <div class="card mb-3" style="max-width: 310px; max-height:103px" id="c2">
-                <div class="row no-gutters">
-                    <div class="col-md-4">
-                        <img src="img/cardLing.jpg" class="card-img" alt="...">
-                    </div>
-                    <div class="col-md-8">
-                        <div class="card-body">
-                            <h5 class="card-title">Linguagens</h5>
-                            <p class="card-text">Provas de português e literatura.</p>
-                            <p class="card-text"><small class="text-muted"></small></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            </a>
-
-            <a href="provaHum.php">
-            <div class="card mb-3" style="max-width: 310px; max-height:103px" id="c3">
-                <div class="row no-gutters">
-                    <div class="col-md-4">
-                        <img src="img/cardHum.jpg" class="card-img" alt="...">
-                    </div>
-                    <div class="col-md-8">
-                        <div class="card-body">
-                            <h5 class="card-title">C. Humanas</h5>
-                            <p class="card-text">Provas de história, geografia.</p>
-                            <p class="card-text"><small class="text-muted"></small></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            </a>
-
-            <a href="provaNat.php">
-            <div class="card mb-3" style="max-width: 310px; max-height:103px" id="c4">
-                <div class="row no-gutters">
-                    <div class="col-md-4">
-                        <img src="img/cardNat.png" class="card-img" alt="...">
-                    </div>
-                    <div class="col-md-8">
-                        <div class="card-body">
-                            <h5 class="card-title">C. da Natureza</h5>
-                            <p class="card-text">Provas de biologia, física e química.</p>
-                            <p class="card-text"><small class="text-muted"></small></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            </a>
-
-        </div>
+        
 
         <div class="footer">
 

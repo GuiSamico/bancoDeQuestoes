@@ -62,33 +62,90 @@
                 <span>Cadastrar questões</span>
             </div>
             <div class="form-group">
-                <label for="enunciado">Enunciado</label>
+                <label for="enunciado">Enunciado (com os itens)</label>
                 <textarea class="form-control" name="enunciado" id="enunciado" rows="3" cols="80"></textarea>
             </div>
             <div class="form-group">
                 <label for="resposta">Resposta</label>
                 <textarea class="form-control" name="resposta" id="resposta" rows="2" cols="80"></textarea>
             </div>
-            <div class="form-group">
-                <label for="alternativa1">Alternativa</label>
-                <textarea class="form-control" name="alternativa1" id="alternativa1" rows="2" cols="80"></textarea>
-            </div>
-            <div class="form-group">
-                <label for="alternativa2">Alternativa</label>
-                <textarea class="form-control" name="alternativa2" id="alternativa2" rows="2" cols="80"></textarea>
-            </div>
-            <div class="form-group">
-                <label for="alternativa3">Alternativa</label>
-                <textarea class="form-control" name="alternativa3" id="alternativa3" rows="2" cols="80"></textarea>
-            </div>
-            <div class="form-group">
-                <label for="disciplina">Disciplina</label>
-                <input class="form-control" name="disciplina" id="disciplina">
-            </div>
             <button type="submit" class="btn btn-secondary">Cadastrar</button>
         </form>
 
         <iframe class="frame_questao" src="listagem-questao.php" width="660px" height="400px"></iframe>
+    </div>
+
+
+    <span id="p">Provas</span>
+    <div class="cards">
+        <a href="provaMat.php" id="c1" target="_blank">
+        <div class="card mb-3" style="max-width: 310px; max-height:103px">
+            <div class="row no-gutters">
+                <div class="col-md-4">
+                    <img src="img/cardMat.jpg" class="card-img" alt="...">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">Matemática</h5>
+                        <p class="card-text">Provas de matemática.</p>
+                        <p class="card-text"><small class="text-muted"></small></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </a>
+
+        <a href="provaLing.php" id="c2" target="_blank">
+        <div class="card mb-3" style="max-width: 310px; max-height:103px">
+            <div class="row no-gutters">
+                <div class="col-md-4">
+                    <img src="img/cardLing.jpg" class="card-img" alt="...">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">Linguagens</h5>
+                        <p class="card-text">Provas de português e literatura.</p>
+                        <p class="card-text"><small class="text-muted"></small></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </a>
+
+        <a href="provaHum.php" id="c3" target="_blank">
+        <div class="card mb-3" style="max-width: 310px; max-height:103px">
+            <div class="row no-gutters">
+                <div class="col-md-4">
+                    <img src="img/cardHum.jpg" class="card-img" alt="...">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">C. Humanas</h5>
+                        <p class="card-text">Provas de história, geografia.</p>
+                        <p class="card-text"><small class="text-muted"></small></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </a>
+
+        <a href="provaNat.php" id="c4" target="_blank">
+        <div class="card mb-3" style="max-width: 310px; max-height:103px">
+            <div class="row no-gutters">
+                <div class="col-md-4">
+                    <img src="img/cardNat.png" class="card-img" alt="...">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">C. da Natureza</h5>
+                        <p class="card-text">Provas de biologia, física e química.</p>
+                        <p class="card-text"><small class="text-muted"></small></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </a>
+
     </div>
 </body>
 </html>

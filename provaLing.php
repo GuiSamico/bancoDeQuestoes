@@ -9,8 +9,8 @@
 	// Cabeçalho
 	function Header()
 	{
-		
-	
+
+
             // Logo
 			// Arial bold 15
 			$this->SetFont('Arial','B',15);
@@ -22,13 +22,13 @@
 			//$this->Cell(30,10,'Title',1,0,'C');
 			// Line break
 			$this->Ln(20);
-			
-			
-		
-		
+
+
+
+
 	}
-	
-	 
+
+
 	// Rodapé
 	function Footer()
 	{
@@ -40,9 +40,9 @@
 		$this->Cell(0,10,utf8_decode('Página ').$this->PageNo().'/{nb}',0,0,'C');
 	}
 }
- 
 
-	// Instanciação 
+
+	// Instanciação
 	$pdf = new PDF();
 	$pdf->AliasNbPages();
 	$pdf->AddPage();
@@ -66,19 +66,19 @@
 
 		$pdf->MultiCell(0,10,utf8_decode("$n. "). $row_questoes['questao'],0,'L', false);
 
-		
+
     }
-$pdf->AddPage();    
+$pdf->AddPage();
 $pdf->SetFont('Arial','B',13);
-$pdf->MultiCell(140,10,utf8_decode('Prova de Matématica - E.E.E.P Marwin'),2,0);
+$pdf->MultiCell(140,10,utf8_decode('Prova de Linguagens - E.E.E.P Marwin'),2,0);
 $pdf->MultiCell(110,20,utf8_decode('Gabarito'),2,0);
 //$pdf->Image('img/governo.jpg',170,6,30);
 for($n = 1; $n<9;$n++){
 $result_resposta = "SELECT resposta FROM questoes WHERE idquestao = '{$idquestao[$n]}' LIMIT 1";
 $resultado_resposta = mysqli_query($conn, $result_resposta);
-$row_resposta = mysqli_fetch_assoc($resultado_resposta);		
+$row_resposta = mysqli_fetch_assoc($resultado_resposta);
 $pdf->Cell(15,10,utf8_decode("$n º"),1,'L', false);
 $pdf->MultiCell(20,10,utf8_decode(""). $row_resposta['resposta'],1,'L', false);
-}  
-    
+}
+
 	$pdf->Output();

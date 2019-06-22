@@ -50,7 +50,7 @@
                     while($row = mysqli_fetch_array($resultado)):
                 ?>
                 <tr>
-                    <td><?php echo utf8_encode($row['enunciado'])?></td>
+                    <td><?php echo utf8_encode($row['questao'])?></td>
                     <td><?php echo utf8_encode($row['resposta'])?></td>
                 </tr>
                 <?php
