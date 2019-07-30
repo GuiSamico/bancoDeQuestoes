@@ -92,3 +92,8 @@ html, body{
 	margin-top: -410px;
 	margin-left: 645px;
 }
+#edit_prof{
+	position: absolute;
+	top: 570px;
+	left: 1180px;
+}

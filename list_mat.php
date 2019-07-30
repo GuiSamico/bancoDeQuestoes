@@ -15,6 +15,8 @@
     <link rel="stylesheet" href="css/datatable.css">
     <script src="js/datatable.js"></script>
     <link rel="stylesheet" href="css/dataTables.bootstrap.min.css">
+    <title>Escolha de questões - Matemática</title>
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
     <script>
         $(document).ready( function () {
             $('#tabela').DataTable({
@@ -39,22 +41,23 @@
         <table id="tabela" class="table table-bordered table-hover">
             <thead>
                 <tr class="th">
-                    <th>Nome</th>
-                    <th>Disciplina</th>
-                    <th>Excluir</th>
+                    <th>Enunciado</th>
+                    <th>Resposta</th>
+                    <th>Assunto</th>
+                    <th>Selecionar</th>
                 </tr>
             </thead>
             <tbody>
                 <?php
-                    $sql = "SELECT * FROM assunto";
+                    $sql = "SELECT * FROM questoes WHERE disciplina = 'Matematica'";
                     $resultado = mysqli_query($conn, $sql);
                     while($row = mysqli_fetch_array($resultado)):
                 ?>
                 <tr>
-                    <?php $id = $row['id'];?>
-                    <td><?php echo utf8_encode($row['nome'])?></td>
-                    <td><?php echo utf8_encode($row['disciplina'])?></td>
-                    <td><a href="excluir/excluir-assunto.php?id=<?php echo $id?>" onclick="return confirm('Tem certeza?')"><img src="img/excluir.png" width="30px;"></a></td>
+                    <td><?php echo utf8_encode($row['questao'])?></td>
+                    <td><?php echo utf8_encode($row['resposta'])?></td>
+                    <td><?php echo utf8_encode($row['assunto'])?></td>
+                    <td><img src="img/selecionar.png" width="30px;"></td>
                 </tr>
                 <?php
                     endwhile;

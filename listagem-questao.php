@@ -35,12 +35,15 @@
     </script>
 </head>
 <body>
-<div class="container" style="position:relative;top:30px;">
+    <div class="container" style="position:relative;top:30px;left:-40px;">
         <table id="tabela" class="table table-bordered table-hover">
             <thead>
                 <tr class="th">
                     <th>Enunciado</th>
                     <th>Resposta</th>
+                    <th>Disciplina</th>
+                    <th>Assunto</th>
+                    <th>Excluir</th>
                 </tr>
             </thead>
             <tbody>
@@ -50,8 +53,12 @@
                     while($row = mysqli_fetch_array($resultado)):
                 ?>
                 <tr>
+                    <?php $id = $row['idquestao'];?>
                     <td><?php echo utf8_encode($row['questao'])?></td>
                     <td><?php echo utf8_encode($row['resposta'])?></td>
+                    <td><?php echo utf8_encode($row['disciplina'])?></td>
+                    <td><?php echo utf8_encode($row['assunto'])?></td>
+                    <td><a href="excluir/excluir-questao.php?id=<?php echo $id?>" onclick="return confirm('Tem certeza?')"><img src="img/excluir.png" width="30px;"></a></td>
                 </tr>
                 <?php
                     endwhile;

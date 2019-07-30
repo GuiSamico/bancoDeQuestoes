@@ -1,6 +1,6 @@
 <?php
     require_once 'conexao.php';
-    include 'login.php';
+    session_start();
     if(!isset($_SESSION['logado'])):
         header('location:index.php');
     endif;
@@ -54,18 +54,19 @@
             </div>
             <div class="form-group">
                 <label for="nome">Nome</label>
-                <input autocomplete="off" type="text" class="form-control" id="nome-prof" name="nome-prof">
+                <input required autocomplete="off" type="text" class="form-control" id="nome-prof" name="nome-prof">
             </div>
             <div class="form-group">
                 <label for="login">Login</label>
-                <input autocomplete="off" type="text" class="form-control" id="login-prof" name="login-prof">
+                <input required autocomplete="off" type="text" class="form-control" id="login-prof" name="login-prof">
             </div>
             <div class="form-group">
                 <label for="senha">Senha</label>
-                <input autocomplete="off" type="password" class="form-control" id="senha-prof" name="senha-prof">
+                <input required autocomplete="off" type="password" class="form-control" id="senha-prof" name="senha-prof">
             </div>
             <button type="submit" class="btn btn-secondary">Cadastrar</button>
         </form>
+        <a href="editar-prof-form.php"><button id="edit_prof" class="btn btn-secondary">Editar dados</button></a>
         <iframe class="frame_prof" src="listagem-prof.php" width="660px" height="400px"></iframe>
 
     </div>
@@ -77,12 +78,14 @@
             </div>
             <div class="form-group">
                 <label for="nome">Nome</label>
-                <input autocomplete="off" type="text" class="form-control" id="nome-disc" name="nome-disc">
+                <input required autocomplete="off" type="text" class="form-control" id="nome-disc" name="nome-disc">
             </div>
             <button type="submit" class="btn btn-secondary">Cadastrar</button>
         </form>
 
         <iframe class="frame_disc" src="listagem-disc.php" width="660px" height="400px"></iframe>
+        <span style="position:absolute;left:700px;
+        margin-top:30px;">Obs: as provas possuem as mesma disciplinas do ENEM, todas estão cadastradas.</span>
     </div>
 </body>
 </html>

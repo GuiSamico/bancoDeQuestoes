@@ -32,40 +32,27 @@
     					<div class="modal-content">
     						<div class="modal-header">
     							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-    							<h4 class="modal-title text-center" id="myModalLabel">Login Administrador</h4>
+    							<h4 class="modal-title text-center" id="myModalLabel">Login</h4>
     						</div>
     						<div class="modal-body">
     							<form method="POST" action="login.php">
     								<div class="form-group">
     									<label for="recipient-name" class="control-label">Login:</label>
-    									<input name="login-admin" type="text" class="form-control">
+    									<input required name="login" type="text" class="form-control">
     								</div>
     								<div class="form-group">
-    									<label for="message-text" class="control-label">Senha</label>
-    									<input name="senha-admin" class="form-control" type="password"></input>
+    									<label for="message-text" class="control-label">Senha:</label>
+    									<input required name="senha" class="form-control" type="password"></input>
     								</div>
-    								<div class="modal-footer">
-    									<button type="submit" class="btn btn-success" name="login_admin">Acessar admin</button>
-    								</div>
-    							</form>
-    						</div>
 
-                            <div class="modal-header">
-    							<button type="button" class="close" data-dismiss="modal"></button>
-    							<h4 class="modal-title text-center" id="myModalLabel" style="left:-300px;">Login Professor</h4>
-    						</div>
-                            <div class="modal-body">
-    							<form method="POST" action="login.php">
-    								<div class="form-group">
-    									<label for="recipient-name" class="control-label">Login:</label>
-    									<input name="login-prof" type="text" class="form-control">
-    								</div>
-    								<div class="form-group">
-    									<label for="message-text" class="control-label">Senha</label>
-    									<input name="senha-prof" class="form-control" type="password"></input>
+                                    <div class="form-group">
+    									<label for="message-text" class="control-label">Professor</label>
+    									<input name="situacao" value="prof" type="radio"></input><br>
+    									<label for="message-text" class="control-label">Administrador</label>
+    									<input name="situacao" value="admin" type="radio"></input>
     								</div>
     								<div class="modal-footer">
-    									<button type="submit" class="btn btn-success" name="login_prof">Acessar professor</button>
+    									<button type="submit" class="btn btn-success" name="login_btn">Acessar</button>
     								</div>
     							</form>
     						</div>
@@ -92,9 +79,10 @@
             <span id="bemvindo2">ao melhor site de banco de questões.</span>
             <p><span id="bemvindo3">Aqui você encontrará questões variadas, com assuntos e disciplinas diferentes.</span><p>
             <span id="bemvindo4">Faça login, e elabore sua prova!</span>
+            <p id="bemvindo5"><span id="bemvindo5">© Matheus & Fred</span></p>
         </div>
 
-        
+
 
         <div class="footer">
 

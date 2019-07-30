@@ -54,13 +54,13 @@
 	$pdf->SetFont('Times','',12);
     //Questões
     $idquestao = array();
-    for($n = 1; $n<9; $n++){
+    for($n = 1; $n<11; $n++){
         $idquestao[$n] = rand(21, 28);
     }
 
 
-	for($n = 1; $n < 9; $n++){
-		$result_questoes = "SELECT * FROM questoes WHERE idquestao = '{$idquestao[$n]}' LIMIT 1";
+	for($n = 1; $n < 11; $n++){
+		$result_questoes = "SELECT * FROM questoes WHERE disciplina = 'Linguagens' LIMIT 1";
 		$resultado_questoes = mysqli_query($conn, $result_questoes);
 		$row_questoes = mysqli_fetch_assoc($resultado_questoes);
 
@@ -73,8 +73,8 @@ $pdf->SetFont('Arial','B',13);
 $pdf->MultiCell(140,10,utf8_decode('Prova de Linguagens - E.E.E.P Marwin'),2,0);
 $pdf->MultiCell(110,20,utf8_decode('Gabarito'),2,0);
 //$pdf->Image('img/governo.jpg',170,6,30);
-for($n = 1; $n<9;$n++){
-$result_resposta = "SELECT resposta FROM questoes WHERE idquestao = '{$idquestao[$n]}' LIMIT 1";
+for($n = 1; $n<11;$n++){
+$result_resposta = "SELECT resposta FROM questoes WHERE disciplina = 'Linguagens' LIMIT 1";
 $resultado_resposta = mysqli_query($conn, $result_resposta);
 $row_resposta = mysqli_fetch_assoc($resultado_resposta);
 $pdf->Cell(15,10,utf8_decode("$n º"),1,'L', false);

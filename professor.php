@@ -1,6 +1,6 @@
 <?php
     require_once 'conexao.php';
-    include 'login.php';
+    session_start();
     if(!isset($_SESSION['logado'])):
         header('location:index.php');
     endif;
@@ -27,8 +27,6 @@
             <ul>
                 <img src="img/favicon.png" id="logo">
                 <img src="img/tLogo.png" id="tLogo">
-
-
                 <div class="pull-right">
                     <a href="logout.php"><img src="img/logout.png" id="login"></a>
                 </div>
@@ -43,11 +41,11 @@
             </div>
             <div class="form-group">
                 <label for="assunto">Assunto</label>
-                <input autocomplete="off" type="text" class="form-control" id="assunto" name="assunto">
+                <input required autocomplete="off" type="text" class="form-control" id="assunto" name="assunto">
             </div>
             <div class="form-group">
                 <label for="disciplina">Disciplina</label>
-                <input autocomplete="off" type="text" class="form-control" id="disciplina" name="disciplina">
+                <input required autocomplete="off" type="text" class="form-control" id="disciplina" name="disciplina">
             </div>
             <button type="submit" class="btn btn-secondary">Cadastrar</button>
         </form>
@@ -63,11 +61,39 @@
             </div>
             <div class="form-group">
                 <label for="enunciado">Enunciado (com os itens)</label>
-                <textarea class="form-control" name="enunciado" id="enunciado" rows="3" cols="80"></textarea>
+                <textarea required class="form-control" name="enunciado" id="enunciado" rows="3" cols="80"></textarea>
             </div>
             <div class="form-group">
                 <label for="resposta">Resposta</label>
-                <textarea class="form-control" name="resposta" id="resposta" rows="2" cols="80"></textarea>
+                <textarea required class="form-control" name="resposta" id="resposta" rows="2" cols="80"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="disc">Disciplina</label>
+                <select required class="disc" name="disc">
+                    <?php
+                        $sql = "SELECT * FROM disciplina";
+                        $resultado = mysqli_query($conn, $sql);
+                        while($row = mysqli_fetch_array($resultado)):
+                    ?>
+                    <option value="<?php echo $row['nome']; ?>"><?php echo $row['nome']; ?></option>
+                    <?php
+                        endwhile;
+                    ?>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="assun">Assunto</label>
+                <select required class="assun" name="assun">
+                    <?php
+                        $sql1 = "SELECT * FROM assunto";
+                        $resultado1 = mysqli_query($conn, $sql1);
+                        while($row1 = mysqli_fetch_array($resultado1)):
+                    ?>
+                    <option value="<?php echo $row1['nome']; ?>"><?php echo $row1['nome']; ?></option>
+                    <?php
+                        endwhile;
+                    ?>
+                </select>
             </div>
             <button type="submit" class="btn btn-secondary">Cadastrar</button>
         </form>

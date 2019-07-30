@@ -39,25 +39,41 @@
         <table id="tabela" class="table table-bordered table-hover">
             <thead>
                 <tr class="th">
-                    <th>Nome</th>
+                    <th>Enunciado</th>
+                    <th>Resposta</th>
                     <th>Disciplina</th>
-                    <th>Excluir</th>
+                    <th>Selecionar</th>
                 </tr>
             </thead>
             <tbody>
                 <?php
-                    $sql = "SELECT * FROM assunto";
+                    $sql = "SELECT * FROM questoes";
                     $resultado = mysqli_query($conn, $sql);
                     while($row = mysqli_fetch_array($resultado)):
                 ?>
                 <tr>
-                    <?php $id = $row['id'];?>
-                    <td><?php echo utf8_encode($row['nome'])?></td>
+                    <?php
+                        $id = $row['idquestao'];
+                        $questoes = array();
+                    ?>
+
+
+                    
+                    <!-- variavel em javascript -->
+
+
+
+                    <script type="text/javascript">
+                        var questoes = array();
+                    </script>
+                    <td><?php echo utf8_encode($row['questao'])?></td>
+                    <td><?php echo utf8_encode($row['resposta'])?></td>
                     <td><?php echo utf8_encode($row['disciplina'])?></td>
-                    <td><a href="excluir/excluir-assunto.php?id=<?php echo $id?>" onclick="return confirm('Tem certeza?')"><img src="img/excluir.png" width="30px;"></a></td>
+                    <td><a href="<?php $questoes[] = $id;?>" onclick="questoes[] = <>"><img src="img/excluir.png" width="30px;"></a></td>
                 </tr>
                 <?php
                     endwhile;
+                    print_r($questoes);
                 ?>
             </tbody>
         </table>

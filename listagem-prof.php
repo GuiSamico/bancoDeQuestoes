@@ -46,7 +46,7 @@
             </thead>
             <tbody>
                 <?php
-                    $sql = "SELECT * FROM professor";
+                    $sql = "SELECT * FROM usuarios WHERE situacao = 'prof'";
                     $resultado = mysqli_query($conn, $sql);
                     while($row = mysqli_fetch_array($resultado)):
                 ?>
@@ -54,7 +54,7 @@
                     <?php $id = $row['id'];?>
                     <td><?php echo utf8_encode($row['nome'])?></td>
                     <td><?php echo utf8_encode($row['login'])?></td>
-                    <td><a href="excluir/excluir-prof.php?id=<?php echo $id?>" onclick="return confirm('Tem certeza?')"><img src="img/excluir.png" width="30px;"></a></td>
+                    <td><a href="excluir/excluir-prof.php?id=<?php echo $id?>" onclick="return confirm('Quer excluir?')"><img src="img/excluir.png" width="30px;"></a></td>
                 </tr>
                 <?php
                     endwhile;
